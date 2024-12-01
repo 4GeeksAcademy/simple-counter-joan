@@ -5,25 +5,23 @@ export const NavBar = ({ currentPage, pageSetter }) => {
 
     return (
         <>
-            <Navbar expand="lg" className="bg-body-tertiary">
+            <Navbar>
                 <Container>
-                    <Navbar.Brand onClick={() => pageSetter("Landing")}>
+                    <Navbar.Brand>
                         CRA Boilerplate
                     </Navbar.Brand>
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto">
-                            {linkMap.map((link) => {
-                        return (
-                            <Nav.Link
-                                active={link === currentPage}
-                                onClick={() => pageSetter(link)}
-                            >
-                                {link}
-                            </Nav.Link>
+                    <Nav className="me-auto">
+                        {linkMap.map((link) => {
+                            return (
+                                <Nav.Link
+                                    active={link === currentPage}
+                                    onClick={() => pageSetter(link)}
+                                >
+                                    {link}
+                                </Nav.Link>
                             );
                         })}
-                        </Nav>
-                    </Navbar.Collapse>
+                    </Nav>
                 </Container>
             </Navbar>
         </>
